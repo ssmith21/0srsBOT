@@ -1,7 +1,7 @@
 # OpenCV Old School Runescape Bot!
 
 ### Quick Disclaimer: 
-Use of bots is against the rules in OSRS. I do not endorse cheating; this bot is purely a coding exercise and I accept that my account may be banned if caught. I have therefor removed and obscurified important parts of the code to prevent people from quickly downloading and using the bot to gain an in-game advantage. 
+Use of bots is against the rules in OSRS. This bot is purely a coding exercise and I have therefor removed and obscurified important parts of the code to prevent people from quickly downloading and using the bot to gain an in-game advantage. 
 
 ### About the game
 This game is an online MMORPG played on mouse and keyboard. Part of playing the game is training various skills in order to level up. There are many way to train each skill and levelling up each skill leads to the player's account gaining access to more content of the game. To find out more or to play the game, visit https://oldschool.runescape.com/ .
@@ -20,10 +20,7 @@ On the left is what the bot sees, on the right is what the user sees; the use is
 ![Mining](gifs/3.gif)
 ![Woodcutting](gifs/5.gif)
 
-
-## Problems, maybe solutions, future plans.
-This implementation uses pyautogui to control the mouse and keyboard and interact with the game, however if performance an issue, Win32API is actually much faster. Due to the nature of the movement class however, slower is actually sometimes better as long as it's not too slow. While trying to mimmic human mouse movement, a list of points which the mouse will travelt to is generated as a last. The mouse travels to each point in the list but if it travels too fast, it might trigger the anti-botting system. If it travels too slowly, then the bot doesn't accomplish its' task! As a result, a 'speed' parameter is implemented in "Movement" which must be manually tuned, but it doesn't always solve the issue since the performance varies depending on many factors. 
-
-
-
-
+## Future plans.
+GUI to start the bot
+A wizard to help setup the movement speed
+Machine learning image detection
