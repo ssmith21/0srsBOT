@@ -1,7 +1,7 @@
 # OpenCV Old School Runescape Bot!
 
 ### Disclaimer: 
-Use of bots is against the rules in OSRS. This bot is purely a coding exercise and I have therefor removed and obscurified important parts of the code to prevent people from quickly downloading and using the bot to gain an in-game advantage. 
+Use of bots is against the OSRS rules. This bot is purely a coding exercise and I have therefor removed and obscurified important parts of the code to prevent people from quickly downloading and using the bot to gain an in-game advantage. 
 
 ### About the game
 This game is an online MMORPG played on mouse and keyboard. Part of playing the game is training various skills in order to level up. There are many way to train each skill and levelling up each skill leads to the player's account gaining access to more content of the game. To find out more or to play the game, visit https://oldschool.runescape.com/ .
