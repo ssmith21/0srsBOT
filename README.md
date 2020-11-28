@@ -21,6 +21,4 @@ On the left is what the bot sees, on the right is what the user sees; the use is
 ![Woodcutting](gifs/5.gif)
 
 ## Future plans.
-GUI to start the bot
-A wizard to help setup the movement speed
-Machine learning image detection
+GUI to start the bot, a wizard to help setup the movement speed, machine learning image detection.
