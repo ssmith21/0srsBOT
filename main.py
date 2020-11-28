@@ -14,8 +14,6 @@ from ctypes import Structure, c_int
 import pyautogui as pog
 
 wincap = WindowCapture('Runelite - USERNAME')
-
-
 item_1 = Vision('whirlpool.png')
 item_2 = Vision('inventory.png')
 
@@ -184,55 +182,21 @@ def qqqqqqq(images, times, hsvVals, thresholds, inventFlags, nrIterations):
                     resetShared(A, lock)
                 else:
                     '''ORDER'''
-                    order = [27, 24, 27, 24, 27, 24, 27, 24, 27, 24, 27, 24, 27, 24, 27, 24, 27, 24, 27, 24, 27, 24, 27, 24, 27, 26, 27, 26, 27, 26, 27, 26, 27, 26, 27, 26, 27, 26, 27, 26, 27, 26, 27, 27, 6, 27, 13, 27, 20]
+                    order = [27, 24, 27, 24, 27, 24, 27, 
+                             24, 27, 24, 27, 24, 27, 24, 
+                             27, 24, 27, 24, 27, 24, 27, 
+                             24, 27, 24, 27, 26, 27, 26, 
+                             27, 26, 27, 26, 27, 26, 27, 
+                             26, 27, 26, 27, 26, 27, 26, 
+                             27, 27, 6, 27, 13, 27, 20]
                     VisionProcess = Process(target=displayCrosshairs, 
                                             args=(images[i], A, times[i], hsvVals[i], thresholds[i], lock))
                     MovementProcess = Process(target=inventClicker, args=(A, order))
                     VisionProcess.start(), MovementProcess.start()
                     VisionProcess.join(), MovementProcess.terminate()
-
                     resetShared(A, lock)
-
-
 
 
 if __name__ == '__main__':
     print('Done.')
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
