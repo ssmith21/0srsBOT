@@ -6,14 +6,11 @@ from hsvfilter import HsvFilter
 class Vision:
 
     TRACKBAR_WINDOW = "Trackbars"
-
-    # properties
     needle_img = None
     needle_w = 0
     needle_h = 0
     method = None
 
-    # constructor
     def __init__(self, needle_img_path, method=cv.TM_CCOEFF_NORMED):
         self.needle_img = cv.imread(needle_img_path, cv.IMREAD_UNCHANGED)
         self.needle_w = self.needle_img.shape[1]
@@ -36,7 +33,7 @@ class Vision:
             rectangles.append(rect)
         rectangles, weights = cv.groupRectangles(rectangles, groupThreshold=1, eps=0.5)
 
-        # limit number of results found on screen to prevent crashes
+        # limit number of results found on screen
         if len(rectangles) > max_results:
             print('Reached max number of results : '+str(max_results))
             rectangles = rectangles[:max_results]
@@ -70,13 +67,10 @@ class Vision:
     def init_control_gui(self):
         cv.namedWindow(self.TRACKBAR_WINDOW, cv.WINDOW_NORMAL)
         cv.resizeWindow(self.TRACKBAR_WINDOW, 350, 700)
-
-        # required callback. we'll be using getTrackbarPos() to do lookups
-        # instead of using the callback.
+        
         def nothing(position):
             pass
 
-        # create trackbars for bracketing.
         # OpenCV scale for HSV is H: 0-179, S: 0-255, V: 0-255
         cv.createTrackbar('HMin', self.TRACKBAR_WINDOW, 0, 179, nothing)
         cv.createTrackbar('SMin', self.TRACKBAR_WINDOW, 0, 255, nothing)
@@ -84,11 +78,12 @@ class Vision:
         cv.createTrackbar('HMax', self.TRACKBAR_WINDOW, 0, 179, nothing)
         cv.createTrackbar('SMax', self.TRACKBAR_WINDOW, 0, 255, nothing)
         cv.createTrackbar('VMax', self.TRACKBAR_WINDOW, 0, 255, nothing)
+       
         # Set default value for Max HSV trackbars
         cv.setTrackbarPos('HMax', self.TRACKBAR_WINDOW, 179)
         cv.setTrackbarPos('SMax', self.TRACKBAR_WINDOW, 255)
         cv.setTrackbarPos('VMax', self.TRACKBAR_WINDOW, 255)
-
+        
         # trackbars for increasing/decreasing saturation and value
         cv.createTrackbar('SAdd', self.TRACKBAR_WINDOW, 0, 255, nothing)
         cv.createTrackbar('SSub', self.TRACKBAR_WINDOW, 0, 255, nothing)
@@ -109,13 +104,11 @@ class Vision:
         hsv_filter.vSub = cv.getTrackbarPos('VSub', self.TRACKBAR_WINDOW)
         return hsv_filter
 
-# given an image and an HSV filter, apply the filter and return the resulting image.
-    # if a filter is not supplied, the control GUI trackbars will be used
+
     def apply_hsv_filter(self, original_image, hsv_filter=None):
+        
         # convert image to HSV
         hsv = cv.cvtColor(original_image, cv.COLOR_BGR2HSV)
-
-        # if we haven't been given a defined filter, use the filter values from the GUI
         if not hsv_filter:
             hsv_filter = self.getHsvFilterFromControls()
 
