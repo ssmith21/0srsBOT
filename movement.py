@@ -22,7 +22,6 @@ def __pascal_row(n):
         result.append(x)
         numerator -= 1
     if n&1 == 0:
-        # n is even
         result.extend(reversed(result[:-1]))
     else:
         result.extend(reversed(result)) 
@@ -52,8 +51,7 @@ def __mouse_bez(init_pos, fin_pos, deviation, speed):
     Takes init_pos and fin_pos as a 2-tuple representing xy coordinates
         variation is a 2-tuple representing the
         max distance from fin_pos of control point for x and y respectively
-        speed is an int multiplier for speed. The lower, the faster. 1 is fastest.
-            
+        speed is an int multiplier for speed. The lower, the faster. 1 is fastests
     '''
 
     #time parameter
