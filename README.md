@@ -1,6 +1,6 @@
 # OpenCV Old School Runescape Bot!
 
-### Quick Disclaimer: 
+### Disclaimer: 
 Use of bots is against the rules in OSRS. This bot is purely a coding exercise and I have therefor removed and obscurified important parts of the code to prevent people from quickly downloading and using the bot to gain an in-game advantage. 
 
 ### About the game
