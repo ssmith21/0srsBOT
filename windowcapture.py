@@ -1,7 +1,7 @@
 import numpy as np
 from win32 import win32gui
-import win32ui  # Ignore these warnings, pylint is stupid
-import win32con # If anyone know how to get pylint to stop working completely lmk
+import win32ui  # Ignore these warnings, pylint
+import win32co
 
 class WindowCapture:
 
@@ -14,7 +14,6 @@ class WindowCapture:
     offset_x = 0
     offset_y = 0
 
-    # constructor
     def __init__(self, window_name=None):
         if window_name is None:
             self.hwnd = win32gui.GetDesktopWindow()
@@ -23,7 +22,6 @@ class WindowCapture:
             if not self.hwnd:
                 raise Exception('Window not found: {}'.format(window_name))
 
-        # get the window size
         window_rect = win32gui.GetWindowRect(self.hwnd)
         self.w = window_rect[2] - window_rect[0]
         self.h = window_rect[3] - window_rect[1]
